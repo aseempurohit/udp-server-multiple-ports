@@ -13,7 +13,7 @@ while True:
     readable, writable, exceptional = select.select(sockets, empty, empty)
     for s in readable:
         (client_data, client_address) = s.recvfrom(1024)
-        print client_address, client_data
+        print(client_address, client_data)
         s.sendto(client_data, client_address)
 for s in sockets:
    s.close()
